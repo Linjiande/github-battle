@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "77fd3863a3ad8f9e96f8";
+/******/ 	var hotCurrentHash = "721a91ce8f381827039d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -258,7 +258,7 @@
 /******/ 				};
 /******/ 			});
 /******/ 			hotUpdate = {};
-/******/ 			var chunkId = "mainIndex";
+/******/ 			var chunkId = "index";
 /******/ 			// eslint-disable-next-line no-lone-blocks
 /******/ 			{
 /******/ 				/*globals chunkId */
@@ -58808,4 +58808,4 @@ if (true) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=mainIndex.js.map
+//# sourceMappingURL=index.js.map
