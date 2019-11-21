@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "325159650da2fa0d6f9b";
+/******/ 	var hotCurrentHash = "37ea1ca26501442b0772";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -40611,6 +40611,8 @@ function (_React$Component) {
       _this.setState({
         click: true
       });
+
+      _this.props.empty();
     });
 
     _this.state = {
@@ -40809,7 +40811,7 @@ function (_React$Component) {
 
     _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(players).call(this, props));
 
-    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), "onClick", function () {
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), "clickBattle", function () {
       var _this$state = _this.state,
           player = _this$state.player,
           first = _this$state.first,
@@ -40833,13 +40835,29 @@ function (_React$Component) {
           first = _this$state2.first,
           last = _this$state2.last;
 
-      if (first.length == 0) {
+      if (first.length == 0 && last.length == 0) {
         _this.setState({
           first: date
         });
-      } else if (last.length == 0) {
+      } else if (last.length == 0 && first.length != 0) {
         _this.setState({
           last: date
+        });
+      }
+    });
+
+    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), "empty", function () {
+      var _this$state3 = _this.state,
+          first = _this$state3.first,
+          last = _this$state3.last;
+
+      if (first.length != 0 && last.length == 0) {
+        _this.setState({
+          first: []
+        });
+      } else if (last.length != 0 && first.length != 0) {
+        _this.setState({
+          last: []
         });
       }
     });
@@ -40856,10 +40874,10 @@ function (_React$Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(players, [{
     key: "render",
     value: function render() {
-      var _this$state3 = this.state,
-          player = _this$state3.player,
-          first = _this$state3.first,
-          last = _this$state3.last;
+      var _this$state4 = this.state,
+          player = _this$state4.player,
+          first = _this$state4.first,
+          last = _this$state4.last;
       var style = {
         div1: {
           display: 'flex',
@@ -40932,16 +40950,18 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
           style: style.h3
         }, "Player One"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_player__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          transmitDate: this.transmitDate
+          transmitDate: this.transmitDate,
+          empty: this.empty
         })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
           style: style.h3
         }, "Player Two"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_player__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          transmitDate: this.transmitDate
+          transmitDate: this.transmitDate,
+          empty: this.empty
         }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
           style: style.div2
         }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
           style: style.button,
-          onClick: this.onClick
+          onClick: this.clickBattle
         }, player)));
       } else if (player == 'RETURN' && first.score > last.score) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -41024,7 +41044,7 @@ function (_React$Component) {
           style: style.div2
         }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
           style: style.button,
-          onClick: this.onClick
+          onClick: clickBattle
         }, player)));
       } else if (player == 'RETURN' && first.score < last.score) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -41107,7 +41127,7 @@ function (_React$Component) {
           style: style.div2
         }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
           style: style.button,
-          onClick: this.onClick
+          onClick: this.clickBattle
         }, player)));
       }
     }
