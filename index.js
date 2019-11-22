@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "37ea1ca26501442b0772";
+/******/ 	var hotCurrentHash = "aa6321db91bdcd350bc4";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -40867,8 +40867,8 @@ var _default = Object(react_hot_loader_root__WEBPACK_IMPORTED_MODULE_8__["hot"])
     return;
   }
 
-  reactHotLoader.register(App, "App", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\popular\\app.js");
-  reactHotLoader.register(_default, "default", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\popular\\app.js");
+  reactHotLoader.register(App, "App", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\popular\\app.js");
+  reactHotLoader.register(_default, "default", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\popular\\app.js");
 })();
 
 ;
@@ -41233,7 +41233,7 @@ function (_React$Component) {
     return;
   }
 
-  reactHotLoader.register(Content, "Content", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\popular\\content.js");
+  reactHotLoader.register(Content, "Content", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\popular\\content.js");
 })();
 
 ;
@@ -41416,7 +41416,7 @@ function (_React$Component) {
     return;
   }
 
-  reactHotLoader.register(Menu, "Menu", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\popular\\menu.js");
+  reactHotLoader.register(Menu, "Menu", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\popular\\menu.js");
 })();
 
 ;
@@ -41573,7 +41573,7 @@ function (_React$Component) {
     return;
   }
 
-  reactHotLoader.register(Navigation, "Navigation", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\popular\\navigation.js");
+  reactHotLoader.register(Navigation, "Navigation", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\popular\\navigation.js");
 })();
 
 ;

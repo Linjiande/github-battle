@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "37ea1ca26501442b0772";
+/******/ 	var hotCurrentHash = "aa6321db91bdcd350bc4";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -40119,8 +40119,8 @@ var _default = Object(react_hot_loader_root__WEBPACK_IMPORTED_MODULE_6__["hot"])
     return;
   }
 
-  reactHotLoader.register(App, "App", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\battle\\app.js");
-  reactHotLoader.register(_default, "default", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\battle\\app.js");
+  reactHotLoader.register(App, "App", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\battle\\app.js");
+  reactHotLoader.register(_default, "default", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\battle\\app.js");
 })();
 
 ;
@@ -40323,7 +40323,7 @@ function (_React$Component) {
     return;
   }
 
-  reactHotLoader.register(Instructions, "Instructions", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\battle\\instructions.js");
+  reactHotLoader.register(Instructions, "Instructions", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\battle\\instructions.js");
 })();
 
 ;
@@ -40480,7 +40480,7 @@ function (_React$Component) {
     return;
   }
 
-  reactHotLoader.register(Navigation, "Navigation", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\battle\\navigation.js");
+  reactHotLoader.register(Navigation, "Navigation", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\battle\\navigation.js");
 })();
 
 ;
@@ -40734,7 +40734,7 @@ function (_React$Component) {
     return;
   }
 
-  reactHotLoader.register(Player, "Player", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\battle\\player.js");
+  reactHotLoader.register(Player, "Player", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\battle\\player.js");
 })();
 
 ;
@@ -41044,7 +41044,7 @@ function (_React$Component) {
           style: style.div2
         }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
           style: style.button,
-          onClick: clickBattle
+          onClick: this.clickBattle
         }, player)));
       } else if (player == 'RETURN' && first.score < last.score) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -41153,7 +41153,7 @@ function (_React$Component) {
     return;
   }
 
-  reactHotLoader.register(players, "players", "D:\\\u5B9E\u8BAD\\react-train\\src\\components\\battle\\players.js");
+  reactHotLoader.register(players, "players", "D:\\\u5B9E\u8BAD\\react-train\\github-battle\\src\\components\\battle\\players.js");
 })();
 
 ;
