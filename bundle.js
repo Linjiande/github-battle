@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "af7da398d2add61dcd18";
+/******/ 	var hotCurrentHash = "dc8e4b6d76e9585f3f36";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -43925,11 +43925,11 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_navigation__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
         exact: true,
-        path: "/",
+        path: "/react-train/",
         component: _popular__WEBPACK_IMPORTED_MODULE_9__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
         exact: true,
-        path: "/battle",
+        path: "/react-train/battle",
         component: _battle__WEBPACK_IMPORTED_MODULE_10__["default"]
       })));
     }
@@ -44704,13 +44704,13 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         style: style.li
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["NavLink"], {
-        to: "/",
+        to: "/react-train/",
         className: this.state.menNum === 1 ? 'nowcolor' : 'color',
         onClick: this.onClickNav.bind(this, 1)
       }, "Popular")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         style: style.li
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["NavLink"], {
-        to: "/battle",
+        to: "/react-train/battle",
         className: this.state.menNum === 2 ? 'nowcolor' : 'color',
         onClick: this.onClickNav.bind(this, 2)
       }, "Battle"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
