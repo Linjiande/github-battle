@@ -57,12 +57,12 @@ export default class Battle extends Component {
             h3:{margin:'0 0 15px 70px',fontWeight:'300'},
             ul: { listStyle: 'none', padding: '0 0 10px 0', width: '250px', margin: '10px', textAlign: 'center', background: 'rgba(0, 0, 0, 0.08)' },
             h4: { margin: '15px', fontSize: '30px', fontWeight: '400' },
-            img: { width: '200px', height: '200px', margin: '0 0 10px 0' },
+            img: { width: '200px', height: '200px', margin: '0 0 10px 0'},
             li1: { lineHeight: '50px',fontWeight:'500',fontSize:'20px'},
             li2: { lineHeight: '50px',fontWeight:'500',fontSize:'25px',color:'#a8071a'},
             li3: { lineHeight: '30px', textAlign: 'left', marginLeft: '30px',fontWeight:'400',fontSize:'20px',textTransform:'capitalize'},
             svg: { verticalAlign: 'middle', marginRight: '5px' },
-            button:{background:'#262626',border:'0',padding:'5px 15px 5px 15px',color:'#f5f5f5',fontSize:'30px'},
+            button:{background:'#262626',border:'0',borderRadius:'5px',padding:'2px 30px',color:'#f5f5f5',fontSize:'23px'},
             
         }
 
@@ -83,7 +83,7 @@ export default class Battle extends Component {
                         </div>
                     </div>
                     <div style={style.div2}>
-                        <button style={style.button} onClick={this.clickBattle}>{player}</button>
+                        <button style={style.button} className={(first.length==0 || last.length==0)?"hide":""} onClick={this.clickBattle}>{player}</button>
                     </div>
                 </div>
             );

@@ -1,7 +1,10 @@
 import React,{Component} from 'react';
 import axios from 'axios';
+import InfiniteScroll from 'react-infinite-scroller';
+import { Spin, Icon } from 'antd';
 
 import '../style/theme.css';
+import 'antd/dist/antd.css'
 
 export default class Popular extends Component {
     constructor(props) {
@@ -10,24 +13,28 @@ export default class Popular extends Component {
             menNum:1,
             repos:[],
             loading:true,
+            page:1,
+            end:true,
             temp:"https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories"
         };
     }
     // 初始化
     async componentDidMount() {
-        const res = await axios.get(this.state.temp);
+        const {temp} = this.state;
+        const res = await axios.get(temp);
         this.setState({
             repos: res.data.items,
             loading:false
         });
     }
     async componentDidUpdate(){
-        const {loading,temp} = this.state;
+        const {loading,temp,repos,end} = this.state;
         const res = await axios.get(temp);
-        if(loading){
-            this.setState({
-                repos:res.data.items,
-                loading:false
+        if(loading||!end){
+            this.setState({ 
+                repos:repos.concat(res.data.items),
+                loading:false,
+                end:true,
             });
         }
     }
@@ -35,17 +42,32 @@ export default class Popular extends Component {
         this.setState({
             menNum:num,
             temp:API,
-            loading:true
+            loading:true,
+            page:1,
+            repos:[],
         });
-    };
+    }
+    search = (term) => {
+        const {page,temp} = this.state;
+        if(!term){
+            this.setState({
+                end:false,
+                page:page+1,
+                temp:temp+'&page='+(page+1),
+            })
+        }
+    }
 
     render() {
+        const {repos,loading,end} = this.state;
         const All = "https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories";
         const Javascript = "https://api.github.com/search/repositories?q=stars:%3E1+language:javascript&sort=stars&order=desc&type=Repositories";
         const Ruby = "https://api.github.com/search/repositories?q=stars:%3E1+language:ruby&sort=stars&order=desc&type=Repositories";
         const Java = "https://api.github.com/search/repositories?q=stars:%3E1+language:java&sort=stars&order=desc&type=Repositories";
         const CSS = "https://api.github.com/search/repositories?q=stars:%3E1+language:css&sort=stars&order=desc&type=Repositories";
         const Python = "";
+
+        const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
         //items
         //图片"avatar_url": "https://avatars0.githubusercontent.com/u/9892522?v=4"
         //详情"html_url": "https://github.com/freeCodeCamp/freeCodeCamp"
@@ -68,7 +90,7 @@ export default class Popular extends Component {
             ul2: { display: 'flex', flexDirection: 'row', listStyle: 'none', padding: '0px' },
             li: { padding: '10px', },
         }
-        const list = this.state.repos.map(
+        const list = repos.map(
             (item, key) => {
                 return (
                 <ul key={key} style={style.ul1}>
@@ -83,7 +105,7 @@ export default class Popular extends Component {
                 )
             }
         );
-        if (this.state.loading === true) {
+        if (loading === true) {
             return (
                 <div>
                     <div style={style.div1}>
@@ -97,7 +119,7 @@ export default class Popular extends Component {
                         </ul>
                     </div>
                     <div style={style.div2}>
-                        Fetch Repos...
+                        <Spin indicator={antIcon} tip="Loading..."/>
                     </div>
                 </div>
             );
@@ -115,8 +137,20 @@ export default class Popular extends Component {
                             <li style={style.li}><a href="#" className={this.state.menNum === 6 ? 'nowcolor':'color'} onClick={this.onClickMenu.bind(this,Python,6)}>Python</a></li>
                         </ul>
                     </div>
-                    <div style={style.div2}>
-                        {list}
+                    <div>
+                    <InfiniteScroll
+                        initialLoad={false}
+                        loadMore={() => this.search(false)}
+                        hasMore={end}
+                        loader={null}
+                    >
+                        <div style={style.div2}>
+                            {list}
+                        </div>
+                        <div style={style.div2}>
+                            <Spin indicator={antIcon} tip="Loading..."/>
+                        </div>
+                    </InfiniteScroll>
                     </div>
                 </div>
             );

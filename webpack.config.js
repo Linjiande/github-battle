@@ -29,6 +29,17 @@ module.exports = function(env,argv) {
             'css-loader'
           ]
         },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: ["file-loader"]
+        },
+        { 
+          test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+          loader: "url-loader",
+          options: {
+          limit: 10000
+          }
+        }
     ]
     },
     devServer:{
